@@ -15,21 +15,21 @@
 #### 1. Adding Buttons for the all 6 Continents.
    1. Option 1: Just Copy-Paste the 'Asia' button and change the names.
    2. Option 2: Use a for loop and iterate over the list.
-      > `for(int i  = 0; i < _list.length; i++) DataNameButton(name: _list[i])` 
+      `for(int i  = 0; i < _list.length; i++) DataNameButton(name: _list[i])` 
    3. Option 3 _(A bit advanced)_: Map each elements of the list to genarate a list of Widgets on fly
-      > `_list.map((e) => DataNameButton(name: e)).toList()`
+      `_list.map((e) => DataNameButton(name: e)).toList()`
    4. Option 4 **(Try Yourself)**: Implement a List View
 #### 2. Write function for Fetching Data from API
    1. Step 1: Add http Package
    2. Step 2: Write Asynchronous function to fetch data from the server in api.dart file
-      > `getContinentData(String continent) async {
+      `getContinentData(String continent) async {
           http.Response data = await http.get(Uri.parse('https://corona.lmao.ninja/v2/continents/$continent'),); 
           print(data.body);
           return jsonDecode(data.body);
       }`
 #### 3. Navigate to next Page
    * Use navigator to navigate to next page:
-     > `Navigator.push(
+     `Navigator.push(
         context,
    MaterialPageRoute(
    builder: (context) => CovidDataPage(
@@ -46,7 +46,7 @@
 
 #### 5. Add GridView to display Data
 * We will use GridView to Implement the data display screen
-    > `GridView.count(
+    `GridView.count(
 crossAxisCount: 2,
 childAspectRatio: 2.5,
 shrinkWrap: true,
@@ -56,7 +56,7 @@ children: [
 
 #### 6. Implement a DataCard and Add it to GridView
 1. Implement a Card inside the DataCard Class
-    >`Card(
+    `Card(
    color: color,
    child: Padding(
    padding: const EdgeInsets.all(8.0),
@@ -83,7 +83,7 @@ children: [
    ),
    )`
 2. Add the implemented DataCard inside the GridView
-    > `DataCard(
+    `DataCard(
    dataLabel: 'Total Cases',
    data: args['cases'].toString(),
    ),`
